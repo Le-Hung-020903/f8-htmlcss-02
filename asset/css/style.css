@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --primary-color: #ffb900;
+    --font-heading: "Sen", sans-serif;
+}
 html {
     font-size: 62.5%;
 }
@@ -20,23 +24,28 @@ a {
 }
 .btn {
     display: inline-block;
-    padding: 17px 16px;
+    padding: 0 16px;
+    line-height: 50px;
     min-width: 118px;
     font-weight: 600;
     font-size: 1.6rem;
     text-align: center;
     color: #ffffff;
     background: #171100;
-    border-radius: 24.5px;
+    border-radius: 999px;
+}
+.btn:hover {
+    opacity: 0.9;
 }
 
 /* ------------------- HEADER ------------------- */
 .header {
-    background: #fffcf4;
+    background-color: #fffcf4;
 }
 .header.fixed {
     position: sticky;
     top: -28px;
+    z-index: 1;
 }
 .header .body {
     display: flex;
@@ -51,30 +60,167 @@ a {
 }
 .nav a {
     position: relative;
-    padding: 8px 21px;
     font-size: 1.6rem;
+    padding: 8px 21px;
     color: #5f5b53;
 }
 .nav a:hover,
 .nav li.active a {
-    /* font-weight: 600; */
-    color: #171100;
     text-shadow: 1px 0 0 currentColor;
+    color: #171100;
 }
 .nav li.active a::after {
+    content: "";
     position: absolute;
     left: 21px;
     bottom: 6px;
     display: inline-block;
-    content: "";
     width: 12px;
     height: 2px;
-    border-radius: 1px;
     background: #171100;
+    border-radius: 1px;
 }
 .header .sign-up-btn {
     min-width: 144px;
 }
 .header .action {
     margin-left: 49px;
+}
+/*? ------------------- HERO ------------------- */
+.hero {
+    padding: 56px 0 65px 0;
+    background: #fffcf4;
+}
+.hero .body {
+    display: flex;
+}
+/*? hero left */
+.hero .media-block {
+    width: 48%;
+    position: relative;
+}
+
+.hero .media-block .img {
+    width: 470px;
+    height: 685px;
+    border-radius: 20px;
+    object-fit: cover;
+    /* vertical-align: bottom; */
+    display: block;
+}
+.hero-summary {
+    position: absolute;
+    padding: 24px;
+    bottom: 48px;
+    right: 0;
+    width: 270px;
+    background: #ffffff;
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+.hero-summary .item {
+    display: flex;
+    align-items: center;
+}
+.hero-summary .item + .item {
+    margin-top: 22px;
+}
+
+.hero-summary .icon {
+    width: 48px;
+    height: 48px;
+    background-color: #fff9e8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-summary .item:nth-of-type(2) .icon {
+    background-color: #fcefff;
+}
+.hero-summary .item:nth-of-type(3) .icon {
+    background-color: #ebeaff;
+}
+.hero-summary .info {
+    margin-left: 16px;
+}
+.hero-summary .label {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.86;
+    color: #5f5b53;
+}
+.hero-summary .title {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #171100;
+}
+/*? hero right */
+.hero .content-block {
+    width: 52%;
+    padding: 64px 0 0 130px;
+}
+.hero .heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 5.8rem;
+    line-height: 1.17;
+    letter-spacing: -0.02em;
+    color: #171100;
+}
+.hero .desc {
+    margin-top: 22px;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #5f5b53;
+}
+
+.hero .cta-group {
+    margin: 38px 0 48px;
+    display: flex;
+    align-items: center;
+}
+.hero .hero-cta {
+    background-color: var(--primary-color);
+    line-height: 64px;
+    min-width: 180px;
+}
+.hero .watch-video {
+    display: flex;
+    align-items: center;
+    margin-left: 28px;
+    border: none;
+    background-color: #fffcf4;
+    cursor: pointer;
+}
+.hero .watch-video .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.07);
+}
+.hero span {
+    margin-left: 14px;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #171100;
+}
+.hero .stats {
+    margin: 8px 0 0 -28px;
+}
+.hero .stats strong {
+    padding: 0 8px 0 28px;
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.4rem;
+    line-height: 1.23;
+    color: #171100;
 }
